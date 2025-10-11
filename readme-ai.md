@@ -5,9 +5,9 @@
 
 <img src="readmeai/assets/logos/purple.svg" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
 
-# <code>❯ REPLACE-ME</code>
+# <code>Patent AI</code>
 
-<em></em>
+<em>İAÜ ŞİRKET</em>
 
 <!-- BADGES -->
 <!-- local repository, no metadata badges. -->
@@ -42,13 +42,40 @@
 
 ## Overview
 
+**Team Members:**  
+- Berat Erol Çelik – Deep Learning, Group Representative  
+- Emre Aldemir – Backend, API  
+- Umut Odabaş – Frontend  
+- Ömer Altıntaş – ML  
+- Efkan Çıtak – LLM  
 
+---
+
+## Problem
+
+Patent süreçleri uzun, karmaşık ve maliyetlidir. Girişimciler, araştırmacılar veya Ar-Ge ekipleri, fikirlerinin daha önce patentlenip patentlenmediğini, hangi alanlarda yoğun başvuru olduğunu veya hangi kısmının gerçekten yenilik taşıdığını anlamakta zorlanıyor.  
+Mevcut sistemler:  
+- Yalnızca İngilizce çalışıyor, Türkçe patent verilerini kapsamaz.  
+- Sadece arama yapan araçlar seviyesinde kalıyor, kullanıcıya akıllı öneriler sunmuyor.  
+- Patent sonrası benzer başvuruları takip etmiyor.  
+
+---
+
+## Çözüm
+
+## Project Structure
+Patent AI, yapay zekâ destekli bir “patent fark analizi ve yenilik danışmanı”dır. Sistem, girilen fikri veya patent dokümanını analiz eder, mevcut patentlerle kıyaslar, farklarını bulur ve yenilik potansiyelini değerlendirir.
 
 ---
 
 ## Features
-
-<code>❯ REPLACE-ME</code>
+- Fark analizi ve yenilik potansiyeli değerlendirmesi  
+- Patentlenebilirlik önerileri ve danışmanlık  
+- Patent öncesi aşamada yoğun başvuru alanlarının analizi  
+- Patent sonrası benzer başvuruların takibi ve uyarılar  
+- Türkçe patent desteği ve yerel çözümler  
+- Akademisyenler, girişimciler ve patent vekilleri için özel raporlar  
+- Gelecekte marka, tasarım ve telif haklarına uyarlanabilir 
 
 ---
 
@@ -78,269 +105,33 @@
         └── components
 ```
 
-### Project Index
-
-<details open>
-	<summary><b><code>/</code></b></summary>
-	<!-- __root__ Submodule -->
-	<details>
-		<summary><b>__root__</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ __root__</b></code>
-			<table style='width: 100%; border-collapse: collapse;'>
-			<thead>
-				<tr style='background-color: #f8f9fa;'>
-					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-					<th style='text-align: left; padding: 8px;'>Summary</th>
-				</tr>
-			</thead>
-			</table>
-		</blockquote>
-	</details>
-	<!-- ai_models Submodule -->
-	<details>
-		<summary><b>ai_models</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ ai_models</b></code>
-			<!-- embeddings Submodule -->
-			<details>
-				<summary><b>embeddings</b></summary>
-				<blockquote>
-					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ ai_models.embeddings</b></code>
-					<table style='width: 100%; border-collapse: collapse;'>
-					<thead>
-						<tr style='background-color: #f8f9fa;'>
-							<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-							<th style='text-align: left; padding: 8px;'>Summary</th>
-						</tr>
-					</thead>
-						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='/ai_models/embeddings/embeddings.py'>embeddings.py</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
-						</tr>
-					</table>
-				</blockquote>
-			</details>
-			<!-- evaluation Submodule -->
-			<details>
-				<summary><b>evaluation</b></summary>
-				<blockquote>
-					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ ai_models.evaluation</b></code>
-					<table style='width: 100%; border-collapse: collapse;'>
-					<thead>
-						<tr style='background-color: #f8f9fa;'>
-							<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-							<th style='text-align: left; padding: 8px;'>Summary</th>
-						</tr>
-					</thead>
-						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='/ai_models/evaluation/evaluation.py'>evaluation.py</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
-						</tr>
-					</table>
-				</blockquote>
-			</details>
-			<!-- llm_analysis Submodule -->
-			<details>
-				<summary><b>llm_analysis</b></summary>
-				<blockquote>
-					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ ai_models.llm_analysis</b></code>
-					<table style='width: 100%; border-collapse: collapse;'>
-					<thead>
-						<tr style='background-color: #f8f9fa;'>
-							<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-							<th style='text-align: left; padding: 8px;'>Summary</th>
-						</tr>
-					</thead>
-						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='/ai_models/llm_analysis/llm_analysis.py'>llm_analysis.py</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
-						</tr>
-					</table>
-				</blockquote>
-			</details>
-			<!-- similarity Submodule -->
-			<details>
-				<summary><b>similarity</b></summary>
-				<blockquote>
-					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ ai_models.similarity</b></code>
-					<table style='width: 100%; border-collapse: collapse;'>
-					<thead>
-						<tr style='background-color: #f8f9fa;'>
-							<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-							<th style='text-align: left; padding: 8px;'>Summary</th>
-						</tr>
-					</thead>
-						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='/ai_models/similarity/similarity.py'>similarity.py</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
-						</tr>
-					</table>
-				</blockquote>
-			</details>
-		</blockquote>
-	</details>
-	<!-- backend Submodule -->
-	<details>
-		<summary><b>backend</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ backend</b></code>
-			<!-- app Submodule -->
-			<details>
-				<summary><b>app</b></summary>
-				<blockquote>
-					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ backend.app</b></code>
-					<!-- models Submodule -->
-					<details>
-						<summary><b>models</b></summary>
-						<blockquote>
-							<div class='directory-path' style='padding: 8px 0; color: #666;'>
-								<code><b>⦿ backend.app.models</b></code>
-							<table style='width: 100%; border-collapse: collapse;'>
-							<thead>
-								<tr style='background-color: #f8f9fa;'>
-									<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-									<th style='text-align: left; padding: 8px;'>Summary</th>
-								</tr>
-							</thead>
-								<tr style='border-bottom: 1px solid #eee;'>
-									<td style='padding: 8px;'><b><a href='/backend/app/models/models.py'>models.py</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
-								</tr>
-							</table>
-						</blockquote>
-					</details>
-					<!-- routes Submodule -->
-					<details>
-						<summary><b>routes</b></summary>
-						<blockquote>
-							<div class='directory-path' style='padding: 8px 0; color: #666;'>
-								<code><b>⦿ backend.app.routes</b></code>
-							<table style='width: 100%; border-collapse: collapse;'>
-							<thead>
-								<tr style='background-color: #f8f9fa;'>
-									<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-									<th style='text-align: left; padding: 8px;'>Summary</th>
-								</tr>
-							</thead>
-								<tr style='border-bottom: 1px solid #eee;'>
-									<td style='padding: 8px;'><b><a href='/backend/app/routes/routes.py'>routes.py</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
-								</tr>
-							</table>
-						</blockquote>
-					</details>
-					<!-- services Submodule -->
-					<details>
-						<summary><b>services</b></summary>
-						<blockquote>
-							<div class='directory-path' style='padding: 8px 0; color: #666;'>
-								<code><b>⦿ backend.app.services</b></code>
-							<table style='width: 100%; border-collapse: collapse;'>
-							<thead>
-								<tr style='background-color: #f8f9fa;'>
-									<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-									<th style='text-align: left; padding: 8px;'>Summary</th>
-								</tr>
-							</thead>
-								<tr style='border-bottom: 1px solid #eee;'>
-									<td style='padding: 8px;'><b><a href='/backend/app/services/services.py'>services.py</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
-								</tr>
-							</table>
-						</blockquote>
-					</details>
-				</blockquote>
-			</details>
-		</blockquote>
-	</details>
-	<!-- deployment Submodule -->
-	<details>
-		<summary><b>deployment</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ deployment</b></code>
-			<table style='width: 100%; border-collapse: collapse;'>
-			<thead>
-				<tr style='background-color: #f8f9fa;'>
-					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-					<th style='text-align: left; padding: 8px;'>Summary</th>
-				</tr>
-			</thead>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='/deployment/deployment.py'>deployment.py</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
-				</tr>
-			</table>
-		</blockquote>
-	</details>
-	<!-- frontend Submodule -->
-	<details>
-		<summary><b>frontend</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ frontend</b></code>
-			<!-- components Submodule -->
-			<details>
-				<summary><b>components</b></summary>
-				<blockquote>
-					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ frontend.components</b></code>
-					<table style='width: 100%; border-collapse: collapse;'>
-					<thead>
-						<tr style='background-color: #f8f9fa;'>
-							<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-							<th style='text-align: left; padding: 8px;'>Summary</th>
-						</tr>
-					</thead>
-						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='/frontend/components/components.py'>components.py</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
-						</tr>
-					</table>
-				</blockquote>
-			</details>
-		</blockquote>
-	</details>
-</details>
-
----
-
 ## Getting Started
 
 ### Prerequisites
 
-This project requires the following dependencies:
-
-- **Programming Language:** Python
+- Python 3.10+  
+- pip 
 
 ### Installation
 
-Build  from the source and intsall dependencies:
 
 1. **Clone the repository:**
 
     ```sh
-    ❯ git clone ../
+    ❯ git clone https://github.com/BerattCelikk/Aidea-Kamp-IAU-Sirket.git
+
     ```
 
 2. **Navigate to the project directory:**
 
     ```sh
-    ❯ cd 
+    ❯ cd  Aidea-Kamp-IAU-Sirket
+
     ```
 
 3. **Install the dependencies:**
 
-echo 'INSERT-INSTALL-COMMAND-HERE'
+pip install -r requirements.txt
 
 ### Usage
 
@@ -428,3 +219,4 @@ echo 'INSERT-TEST-COMMAND-HERE'
 
 
 ---
+
