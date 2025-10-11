@@ -25,7 +25,8 @@
 
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-- [Features](#features)
+- [Features](#️key-features)
+- [Vision & Future Development](#vision--future-development)
 - [Project Structure](#project-structure)
     - [Project Index](#project-index)
 - [Getting Started](#getting-started)
@@ -134,6 +135,11 @@ PatentAI üç temel soruya yanıt verir:
 ### Next Step
 PatentAI, “analiz yapan bir araç”tan “sürekli öğrenen ve öneren bir yapay zekâ danışmanı”na dönüşmeyi hedefler.
 Patent fark analizi → yenilik önerisi → rapor → takip → stratejik öneri döngüsü ile tam bir AI ekosistemi oluşturur.
+
+### What This Project Solves
+* Türkçe patent verilerinde fark analizi yapabilen ilk sistemlerden biri.
+* Patent araştırma süresini kısaltır, yenilik yönü gösterir.
+* Patent sonrası takip sistemiyle kullanıcıya sürekli değer sağlar.
 
 ---
 
@@ -282,6 +288,7 @@ echo 'INSERT-TEST-COMMAND-HERE'
 
 
 ---
+
 
 
 
