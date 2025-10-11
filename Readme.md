@@ -63,19 +63,41 @@ Mevcut sistemler:
 
 ## Çözüm
 
+PatentAI
+- Fikri veya patent dokümanını analiz eder
+- Benzer patentleri bulur ve farklarını özetler
+- Yenilik potansiyelini değerlendirir
+- Girişimciler, Ar-Ge Ekipleri ve araştırmacıları için akıllı öneriler sunar
+
+--
+
+## Key Features
+- 🔍 Patent Fark Analizi ve Yenilik Değerlendirmesi:
+    Girilen fikir veya patent dokümanını mevcut patentlerle kıyaslayarak farklarını ve yenilik potansiyelini analiz eder.
+- 🧠 LLM-Tabanlı Anlamlandırma ve Danışmanlık:
+    LLM (ör. Llama 3 veya GPT-4) modelleri ile metni anlamsal düzeyde yorumlar, güçlü ve geliştirilebilir yönleri hakkında öneriler sunar.
+- 💡 Patentlenebilirlik Önerileri:
+    Fikrin hangi yönlerinin patentlenebilir olduğunu değerlendirir, kullanıcıya stratejik tavsiyeler verir.
+- 🌐 Türkçe Patent Desteği ve Yerel Çözümler:
+    Türk Patent verileri üzerinde çalışan, Türkçe dilinde fark analizi yapabilen ilk sistemlerden biridir.
+- 📊 Yoğunluk ve Boşluk Analizi:
+    Patent öncesi aşamada belirli alanlarda yoğun başvuru olup olmadığını analiz eder, “hangi alanda boşluk var?” sorusuna yanıt verir.
+- 🔔 Patent Takip ve Uyarı Sistemi (Future):
+    Patent sonrası dönemde benzer başvurular yapıldığında kullanıcıyı bilgilendirir.
+- 🎯 Stratejik Öneriler:
+    Patent farklarını sadece teknik açıdan değil, pazar ve strateji yönünden de değerlendirir.
+- 👩‍💼 Hedef Kullanıcılar için Özel Raporlar:
+    * Girişimciler: 5 dakikada yenilik raporu alabilir.
+    * Patent Vekilleri: Müvekkil fikriyle ilgili dayanak patentleri görebilir.
+    * Akademisyenler / Öğrenciler: Fikrin literatürle ilişkisini görselleştirebilir.
+- 🌟 Genişletilebilir Yapı:
+     Gelecekte marka, tasarım ve telif haklarına da uyarlanabilecek esnek bir sistem mimarisi.
+    
+
+--
+
 ## Project Structure
 Patent AI, yapay zekâ destekli bir “patent fark analizi ve yenilik danışmanı”dır. Sistem, girilen fikri veya patent dokümanını analiz eder, mevcut patentlerle kıyaslar, farklarını bulur ve yenilik potansiyelini değerlendirir.
-
----
-
-## Features
-- Fark analizi ve yenilik potansiyeli değerlendirmesi  
-- Patentlenebilirlik önerileri ve danışmanlık  
-- Patent öncesi aşamada yoğun başvuru alanlarının analizi  
-- Patent sonrası benzer başvuruların takibi ve uyarılar  
-- Türkçe patent desteği ve yerel çözümler  
-- Akademisyenler, girişimciler ve patent vekilleri için özel raporlar  
-- Gelecekte marka, tasarım ve telif haklarına uyarlanabilir 
 
 ---
 
@@ -219,4 +241,5 @@ echo 'INSERT-TEST-COMMAND-HERE'
 
 
 ---
+
 
