@@ -69,7 +69,7 @@ PatentAI
 - Yenilik potansiyelini değerlendirir
 - Girişimciler, Ar-Ge Ekipleri ve araştırmacıları için akıllı öneriler sunar
 
---
+---
 
 ## Key Features
 - 🔍 Patent Fark Analizi ve Yenilik Değerlendirmesi:
@@ -94,7 +94,7 @@ PatentAI
      Gelecekte marka, tasarım ve telif haklarına da uyarlanabilecek esnek bir sistem mimarisi.
     
 
---
+---
 
 ## Project Structure
 Patent AI, yapay zekâ destekli bir “patent fark analizi ve yenilik danışmanı”dır. Sistem, girilen fikri veya patent dokümanını analiz eder, mevcut patentlerle kıyaslar, farklarını bulur ve yenilik potansiyelini değerlendirir.
@@ -241,5 +241,6 @@ echo 'INSERT-TEST-COMMAND-HERE'
 
 
 ---
+
 
 
