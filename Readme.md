@@ -142,11 +142,8 @@ Patent fark analizi → yenilik önerisi → rapor → takip → stratejik öner
 ---
 
 ## Project Structure
+
 Patent AI, yapay zekâ destekli bir “patent fark analizi ve yenilik danışmanı”dır. Sistem, girilen fikri veya patent dokümanını analiz eder, mevcut patentlerle kıyaslar, farklarını bulur ve yenilik potansiyelini değerlendirir.
-
----
-
-## Project Structure
 
 ```sh
 └── /
@@ -171,7 +168,53 @@ Patent AI, yapay zekâ destekli bir “patent fark analizi ve yenilik danışman
         ├── assets
         └── components
 ```
+## 🧠 API & Data
 
+### Data Sources
+PatentAI, hem Türkçe hem İngilizce patent verileriyle çalışır.  
+İlk MVP sürümünde kullanılacak kaynaklar:
+
+- **[TÜRKPATENT Açık Veri Arşivi](https://www.turkpatent.gov.tr/)**  
+  → Türkçe patent özetleri ve başlıkları (CSV / XML olarak indirilebilir)
+- **[EPO – Espacenet API](https://www.epo.org/searching-for-patents/technical/espacenet.html)**  
+  → Avrupa Patent Ofisi verileri, kıyaslama için küçük örnek set
+- **[USPTO PatentView API](https://patentsview.org/)**  
+  → İngilizce patent karşılaştırmaları için kullanılabilir ek kaynak
+
+> 📘 **Not:** İlk sürümde sadece TürkPatent + küçük EPO örnek seti yeterlidir.  
+> Sistem ilerleyen aşamalarda uluslararası veritabanlarıyla genişletilecektir.
+
+---
+
+### Backend & API Layer
+
+PatentAI’nin arka uç servisi **Flask veya FastAPI** ile geliştirilmiştir.
+
+| Bileşen | Açıklama |
+|----------|-----------|
+| `/analyze` | Kullanıcıdan gelen fikir/patent metnini alır, embedding çıkarır ve benzer patentleri döndürür. |
+| `/report` | Analiz sonuçlarını özetleyip JSON veya PDF formatında rapor olarak döner. |
+| `/feedback` | Kullanıcı geri bildirimini toplar ve sistemin sürekli öğrenmesini sağlar. |
+
+**Teknolojiler:**  
+- Python 3.x  
+- Flask / FastAPI  
+- SentenceTransformers (`all-MiniLM-L6-v2`)  
+- FAISS veya cosine similarity  
+- PostgreSQL (veri kayıtları)  
+- Opsiyonel: Elasticsearch (hızlı metin araması için)
+
+---
+
+### Example Data Flow
+
+1. Kullanıcı fikir veya patent özetini girer.  
+2. Backend, metni embedding’e çevirir (`SentenceTransformers`).  
+3. Benzer patentleri veritabanında arar (`cosine similarity` / `faiss`).  
+4. LLM (ör. Llama 3 veya GPT-4) farkları ve yenilik yönlerini yorumlar.  
+5. Sonuçlar JSON veya HTML raporu olarak frontend’e döner.
+
+---
 ## Getting Started
 
 ### Prerequisites
@@ -286,6 +329,7 @@ echo 'INSERT-TEST-COMMAND-HERE'
 
 
 ---
+
 
 
 
