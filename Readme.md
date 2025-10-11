@@ -93,6 +93,47 @@ PatentAI
 - 🌟 Genişletilebilir Yapı:
      Gelecekte marka, tasarım ve telif haklarına da uyarlanabilecek esnek bir sistem mimarisi.
     
+---
+
+## Vision & Future Development
+
+---
+
+### Expanding the Scope
+
+PatentAI şu anda “patentler arasındaki farkları bulma” üzerine odaklanmıştır.
+Gelecekte:
+    * Patentlenebilirlik Değerlendirmesi: Fikrin hangi yönlerinin gerçekten yenilik sayılabileceğini değerlendiren bir danışman haline gelecek.
+    * Patent Öncesi Analiz: Başvuru yapılmadan önce hangi alanlarda yoğun patentleşme olduğunu göstererek “bu alanda boşluk var mı?” sorusuna yanıt verecek.
+    * Patent Takip Sistemi: Patent sonrası benzer başvuruları algılayıp kullanıcıyı bilgilendiren bir modül eklenecek.
+
+### Deepening Originality
+PatentAI sadece “arama yapan araç” değil, “düşünen bir danışman” olmayı hedefler.
+
+* Kullanıcının fikrini yorumlar, güçlü ve geliştirilebilir yönlerini belirler.
+* Farklılıkları teknik olduğu kadar stratejik açıdan da analiz eder.
+* Türkçe patent diline odaklanarak yerel çözümler sunan ilk sistemlerden biri olmayı amaçlar.
+
+### Increasing User Value
+PatentAI, farklı kullanıcı gruplarına özel değer sağlar:
+* 💡 Girişimciler: 5 dakikada fikir raporu alabilir.
+* ⚖️ Patent vekilleri: Müvekkil fikrini savunurken ilgili patentleri bulabilir.
+* 🎓 Akademisyenler / öğrenciler: Fikirlerin literatürle ilişkisini görselleştirebilir.
+Bu sayede sistem, tek bir arama aracından karar destek platformuna dönüşür.
+
+### Expanding Impact
+* Patentlerle sınırlı kalmayıp marka, tasarım ve telif alanlarına da genişletilebilir.
+* Uluslararası (EPO, USPTO) ve yerel (TÜRKPATENT) verilerle küresel kıyaslama sağlar.
+
+### Presentation & Story
+PatentAI üç temel soruya yanıt verir:
+    * Kim için neyi çözüyor? → Girişimciler, Ar-Ge ekipleri ve araştırmacılar için süreci hızlandırır.
+    * Neden diğerlerinden daha akıllı? → LLM tabanlı analiz, Türkçe destek, stratejik öneriler ve takip sistemi sayesinde benzersizdir.
+    * Kullanıcı bundan sonra ne yapabilir? → Fikrinin patentlenebilirliğini görebilir, eksik yönlerini geliştirebilir ve benzer başvuruları izleyebilir.
+
+### Next Step
+PatentAI, “analiz yapan bir araç”tan “sürekli öğrenen ve öneren bir yapay zekâ danışmanı”na dönüşmeyi hedefler.
+Patent fark analizi → yenilik önerisi → rapor → takip → stratejik öneri döngüsü ile tam bir AI ekosistemi oluşturur.
 
 ---
 
@@ -241,6 +282,7 @@ echo 'INSERT-TEST-COMMAND-HERE'
 
 
 ---
+
 
 
 
