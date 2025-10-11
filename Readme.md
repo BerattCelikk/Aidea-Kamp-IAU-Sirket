@@ -98,8 +98,6 @@ PatentAI
 
 ## Vision & Future Development
 
----
-
 ### Expanding the Scope
 
 PatentAI şu anda “patentler arasındaki farkları bulma” üzerine odaklanmıştır.
@@ -288,6 +286,7 @@ echo 'INSERT-TEST-COMMAND-HERE'
 
 
 ---
+
 
 
 
