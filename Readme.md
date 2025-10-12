@@ -3,7 +3,7 @@
 <!-- HEADER STYLE: CLASSIC -->
 <div align="center">
 
-<img src="iaüsirketlogo.jpg" width="180px" alt="İAÜ Şirket Logo" style="margin-bottom: 10px;"/>
+<img src="iaüsirketlogogüncel.jpg" width="180px" alt="İAÜ Şirket Logo" style="margin-bottom: 10px;"/>
 
 # <code>Patent AI</code>
 
@@ -81,14 +81,14 @@ PatentAI
 
 | Özellik | Açıklama | Durum |
 |---------|-------------|---------|
-| 🔍 **Patent Fark Analizi** | Fikirleri mevcut patentlerle karşılaştırır | ✅ MVP |
-| 🧠 **LLM Tabanlı Anlamsal Analiz** | Llama 3/GPT-4 ile akıllı yorumlama | ✅ MVP |
-| 💡 **Patentlenebilirlik Değerlendirmesi** | Yenilik potansiyelini değerlendirir | 🚧 Geliştirme |
-| 🌐 **Türkçe Patent Desteği** | Türkçe patent analizi yapan ilk sistem | ✅ MVP |
-| 📊 **Yoğunluk & Boşluk Analizi** | Kalabalık ve boş teknoloji alanlarını belirler | 🚧 Geliştirme |
-| 🔔 **Patent İzleme** | Patent sonrası benzer başvuruları takip eder | 📅 Gelecek |
-| 🎯 **Stratejik Öneriler** | Teknik ve pazar odaklı tavsiyeler | 🚧 Geliştirme |
-| 👥 **Çok Kullanıcılı Raporlar** | Farklı kullanıcı tipleri için özel raporlar | ✅ MVP |
+| 🔍 **Patent Fark Analizi** | Fikirleri mevcut patentlerle karşılaştırır | ❌ Planlama |
+| 🧠 **LLM Tabanlı Anlamsal Analiz** | Llama 3/GPT-4 ile akıllı yorumlama | ❌ Planlama |
+| 💡 **Patentlenebilirlik Değerlendirmesi** | Yenilik potansiyelini değerlendirir | ❌ Planlama |
+| 🌐 **Türkçe Patent Desteği** | Türkçe patent analizi yapan ilk sistem | ❌ Planlama |
+| 📊 **Yoğunluk & Boşluk Analizi** | Kalabalık ve boş teknoloji alanlarını belirler | ❌ Planlama |
+| 🔔 **Patent İzleme** | Patent sonrası benzer başvuruları takip eder | ❌ Planlama |
+| 🎯 **Stratejik Öneriler** | Teknik ve pazar odaklı tavsiyeler | ❌ Planlama |
+| 👥 **Çok Kullanıcılı Raporlar** | Farklı kullanıcı tipleri için özel raporlar | ❌ Planlama |
 
 
     
@@ -210,6 +210,7 @@ PatentAI, hem Türkçe hem İngilizce patent verileriyle çalışır.
 
 
 ---
+
 
 
 
