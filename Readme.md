@@ -51,7 +51,7 @@
 | Rol | Üye | LinkedIn |
 |------|--------|-----------|
 | **Deep Learning & Team Lead** | Berat Erol Çelik | [![LinkedIn](https://img.shields.io/badge/-Berat_Erol_Çelik-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/berat-erol-%C3%A7elik-513915258/) |
-| **Backend & API** | Emre Aldemir1 | [![LinkedIn](https://img.shields.io/badge/-Emre_Aldemir-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/emre-aldemir-1b2301293/) |
+| **Backend & API** | Emre Aldemir | [![LinkedIn](https://img.shields.io/badge/-Emre_Aldemir-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/emre-aldemir-1b2301293/) |
 | **Frontend & UI/UX** | Umut Odabaş | [![LinkedIn](https://img.shields.io/badge/-Umut_Odabaş-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/umut-odaba%C5%9F-8a26142a2/) |
 | **Machine Learning** | Ömer Altıntaş | [![LinkedIn](https://img.shields.io/badge/-Ömer_Altıntaş-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/%C3%B6mer-alt%C4%B1nta%C5%9F-44773730b/) |
 | **LLM Specialist** | Efkan Çıtak | [![LinkedIn](https://img.shields.io/badge/-Efkan_Çıtak-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/efkan-%C3%A7%C4%B1tak-b848a32a0/) |
@@ -210,6 +210,7 @@ PatentAI, hem Türkçe hem İngilizce patent verileriyle çalışır.
 
 
 ---
+
 
 
 
