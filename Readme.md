@@ -14,33 +14,41 @@
 
 <em>Built with the tools and technologies:</em>
 
-<img src="https://img.shields.io/badge/Python-3776AB.svg?style=default&logo=Python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/FastAPI-009688.svg?style=for-the-badge&logo=FastAPI&logoColor=white" alt="FastAPI">
+<img src="https://img.shields.io/badge/Flask-000000.svg?style=for-the-badge&logo=Flask&logoColor=white" alt="Flask">
+<img src="https://img.shields.io/badge/SentenceTransformers-FF6F00.svg?style=for-the-badge&logo=HuggingFace&logoColor=white" alt="SentenceTransformers">
+<img src="https://img.shields.io/badge/FAISS-00B0FF.svg?style=for-the-badge&logo=Facebook&logoColor=white" alt="FAISS">
+<img src="https://img.shields.io/badge/scikit--learn-F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn">
+<img src="https://img.shields.io/badge/Llama-3B82F6.svg?style=for-the-badge&logo=Meta&logoColor=white" alt="Llama">
+<img src="https://img.shields.io/badge/Streamlit-FF4B4B.svg?style=for-the-badge&logo=Streamlit&logoColor=white" alt="Streamlit">
+<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" alt="HTML5">
+<img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white" alt="CSS3">
+
 
 </div>
 <br>
 
 ---
 
-## Table of Contents
+## 📑 İçindekiler
 
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
-    - [Project Index](#project-index)
-- [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Testing](#testing)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
-
+- [📑 İçindekiler](#-i̇çindekiler)
+- [👁️ Genel Bakış](#️-genel-bakış)
+- [🎯 Problem](#-problem)
+- [💡 Çözüm](#-çözüm)
+- [🚀 Temel Özellikler](#-temel-özellikler)
+- [🔧 Teknoloji Yığını](#-teknoloji-yığını)
+- [🏗️ Sistem Mimarisi](#️-sistem-mimarisi)
+- [📊 Veri Kaynakları](#-veri-kaynakları)
+- [🛣️ Vizyon & Gelecek Geliştirme](#️-vizyon--gelecek-geliştirme)
+- [📁 Proje Yapısı](#-proje-yapısı)
+- [🗓️ Yol Haritası](#️-yol-haritası)
+- [👥 Ekip](#-ekip)
+- [📞 İletişim](#-i̇letişim)
 ---
 
-## Overview
+## 👁️ Genel Bakış
 
 **Team Members:**  
 - Berat Erol Çelik – Deep Learning, Group Representative  
@@ -51,8 +59,7 @@
 
 ---
 
-## Problem
-
+## 🎯 Problem
 Patent süreçleri uzun, karmaşık ve maliyetlidir. Girişimciler, araştırmacılar veya Ar-Ge ekipleri, fikirlerinin daha önce patentlenip patentlenmediğini, hangi alanlarda yoğun başvuru olduğunu veya hangi kısmının gerçekten yenilik taşıdığını anlamakta zorlanıyor.  
 Mevcut sistemler:  
 - Yalnızca İngilizce çalışıyor, Türkçe patent verilerini kapsamaz.  
@@ -61,25 +68,62 @@ Mevcut sistemler:
 
 ---
 
-## Çözüm
+## 💡 Çözüm
 
-## Project Structure
+PatentAI
+- Fikri veya patent dokümanını analiz eder
+- Benzer patentleri bulur ve farklarını özetler
+- Yenilik potansiyelini değerlendirir
+- Girişimciler, Ar-Ge Ekipleri ve araştırmacıları için akıllı öneriler sunar
+
+---
+
+## 🚀 Temel Özellikler
+
+| Özellik | Açıklama | Durum |
+|---------|-------------|---------|
+| 🔍 **Patent Fark Analizi** | Fikirleri mevcut patentlerle karşılaştırır | ✅ MVP |
+| 🧠 **LLM Tabanlı Anlamsal Analiz** | Llama 3/GPT-4 ile akıllı yorumlama | ✅ MVP |
+| 💡 **Patentlenebilirlik Değerlendirmesi** | Yenilik potansiyelini değerlendirir | 🚧 Geliştirme |
+| 🌐 **Türkçe Patent Desteği** | Türkçe patent analizi yapan ilk sistem | ✅ MVP |
+| 📊 **Yoğunluk & Boşluk Analizi** | Kalabalık ve boş teknoloji alanlarını belirler | 🚧 Geliştirme |
+| 🔔 **Patent İzleme** | Patent sonrası benzer başvuruları takip eder | 📅 Gelecek |
+| 🎯 **Stratejik Öneriler** | Teknik ve pazar odaklı tavsiyeler | 🚧 Geliştirme |
+| 👥 **Çok Kullanıcılı Raporlar** | Farklı kullanıcı tipleri için özel raporlar | ✅ MVP |
+
+
+    
+---
+
+## 🔧 Teknoloji Yığını
+
+### Backend & API
+<img src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/FastAPI-009688.svg?style=for-the-badge&logo=FastAPI&logoColor=white" alt="FastAPI">
+<img src="https://img.shields.io/badge/Flask-000000.svg?style=for-the-badge&logo=Flask&logoColor=white" alt="Flask">
+
+### Yapay Zeka & Makine Öğrenmesi
+<img src="https://img.shields.io/badge/SentenceTransformers-FF6F00.svg?style=for-the-badge&logo=HuggingFace&logoColor=white" alt="SentenceTransformers">
+<img src="https://img.shields.io/badge/FAISS-00B0FF.svg?style=for-the-badge&logo=Facebook&logoColor=white" alt="FAISS">
+<img src="https://img.shields.io/badge/scikit--learn-F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn">
+<img src="https://img.shields.io/badge/Llama-3B82F6.svg?style=for-the-badge&logo=Meta&logoColor=white" alt="Llama">
+
+### Önyüz & Kullanıcı Arayüzü
+<img src="https://img.shields.io/badge/Streamlit-FF4B4B.svg?style=for-the-badge&logo=Streamlit&logoColor=white" alt="Streamlit">
+<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" alt="HTML5">
+<img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white" alt="CSS3">
+
+### Veritabanı & Dağıtım
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white" alt="PostgreSQL">
+<img src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white" alt="Docker">
+<img src="https://img.shields.io/badge/Render-46E3B7.svg?style=for-the-badge&logo=Render&logoColor=white" alt="Render">
+
+---
+
+## 🏗️ Sistem Mimarisi
+
+
 Patent AI, yapay zekâ destekli bir “patent fark analizi ve yenilik danışmanı”dır. Sistem, girilen fikri veya patent dokümanını analiz eder, mevcut patentlerle kıyaslar, farklarını bulur ve yenilik potansiyelini değerlendirir.
-
----
-
-## Features
-- Fark analizi ve yenilik potansiyeli değerlendirmesi  
-- Patentlenebilirlik önerileri ve danışmanlık  
-- Patent öncesi aşamada yoğun başvuru alanlarının analizi  
-- Patent sonrası benzer başvuruların takibi ve uyarılar  
-- Türkçe patent desteği ve yerel çözümler  
-- Akademisyenler, girişimciler ve patent vekilleri için özel raporlar  
-- Gelecekte marka, tasarım ve telif haklarına uyarlanabilir 
-
----
-
-## Project Structure
 
 ```sh
 └── /
@@ -105,110 +149,75 @@ Patent AI, yapay zekâ destekli bir “patent fark analizi ve yenilik danışman
         └── components
 ```
 
-## Getting Started
+### API Uç Noktaları
+| Uç Nokta | Metot | Açıklama |
+|----------|--------|-------------|
+| `/api/analyze` | POST | Patent fikrini analiz eder ve benzerlikleri bulur |
+| `/api/similar` | GET | Benzer patentleri bulur |
+| `/api/report` | POST | Analiz raporu oluşturur |
+| `/api/health` | GET | Sistem sağlık kontrolü |
 
-### Prerequisites
-
-- Python 3.10+  
-- pip 
-
-### Installation
-
-
-1. **Clone the repository:**
-
-    ```sh
-    ❯ git clone https://github.com/BerattCelikk/Aidea-Kamp-IAU-Sirket.git
-
-    ```
-
-2. **Navigate to the project directory:**
-
-    ```sh
-    ❯ cd  Aidea-Kamp-IAU-Sirket
-
-    ```
-
-3. **Install the dependencies:**
-
-pip install -r requirements.txt
-
-### Usage
-
-Run the project with:
-
-echo 'INSERT-RUN-COMMAND-HERE'
-
-### Testing
-
- uses the {__test_framework__} test framework. Run the test suite with:
-
-echo 'INSERT-TEST-COMMAND-HERE'
+### Veri Akışı
+1. **Girdi**: Kullanıcı fikir/patent metni gönderir
+2. **İşleme**: Metin SentenceTransformers ile vektörlere dönüştürülür
+3. **Arama**: FAISS benzerlik araması ile patent veritabanında tarama
+4. **Analiz**: LLM farkları ve yenilik potansiyelini işler
+5. **Çıktı**: Öneriler içeren yapılandırılmış rapor
 
 ---
+
+## 📊 Veri Kaynakları
+
+PatentAI, hem Türkçe hem İngilizce patent verileriyle çalışır.  
+İlk MVP sürümünde kullanılacak kaynaklar:
+
+- **Google Patent İngilizce ve Türkçe Patentler** - Ana veri kaynağı
+
+
+
+### Backend & API Layer
+
+PatentAI’nin arka uç servisi **Flask veya FastAPI** ile geliştirilmesi planlanmaktadır.
+
+| Bileşen | Açıklama | ( ÖRNEK OLARAK)
+|----------|-----------|
+| `/analyze` | Kullanıcıdan gelen fikir/patent metnini alır, embedding çıkarır ve benzer patentleri döndürür. |
+| `/report` | Analiz sonuçlarını özetleyip JSON veya PDF formatında rapor olarak döner. |
+| `/feedback` | Kullanıcı geri bildirimini toplar ve sistemin sürekli öğrenmesini sağlar. |
+
+**Teknolojiler:**  
+- Python 3.x  
+- Flask / FastAPI  
+- SentenceTransformers (`all-MiniLM-L6-v2`)  
+- FAISS veya cosine similarity  
+- PostgreSQL (veri kayıtları)  
+- Opsiyonel: Elasticsearch (hızlı metin araması için)
+
+---
+
+### Example Data Flow
+
+1. Kullanıcı fikir veya patent özetini girer.  
+2. Backend, metni embedding’e çevirir (`SentenceTransformers`).  
+3. Benzer patentleri veritabanında arar (`cosine similarity` / `faiss`).  
+4. LLM (ör. Llama 3 veya GPT-4) farkları ve yenilik yönlerini yorumlar.  
+5. Sonuçlar JSON veya HTML raporu olarak frontend’e döner.
+
+---
+
 
 ## Roadmap
 
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
+-  **`Task 1`**: Analiz & Planlama
+-  **`Task 2`**: Veri Toplama & Modelleme Başlangıcı
+-  **`Task 3`**: Flask API & Backend Geliştirme
+-  **`Task 4`**: Arayüz + Raporlama ( Python tabanlı)
+-  **`Task 5`**: Test,Demo & Sunum
+
+
 
 ---
 
-## Contributing
-
-- **💬 [Join the Discussions](https://LOCAL///discussions)**: Share your insights, provide feedback, or ask questions.
-- **🐛 [Report Issues](https://LOCAL///issues)**: Submit bugs found or log feature requests for the `` project.
-- **💡 [Submit Pull Requests](https://LOCAL///blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
-
-<details closed>
-<summary>Contributing Guidelines</summary>
-
-1. **Fork the Repository**: Start by forking the project repository to your LOCAL account.
-2. **Clone Locally**: Clone the forked repository to your local machine using a git client.
-   ```sh
-   git clone .
-   ```
-3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
-   ```sh
-   git checkout -b new-feature-x
-   ```
-4. **Make Your Changes**: Develop and test your changes locally.
-5. **Commit Your Changes**: Commit with a clear message describing your updates.
-   ```sh
-   git commit -m 'Implemented new feature x.'
-   ```
-6. **Push to LOCAL**: Push the changes to your forked repository.
-   ```sh
-   git push origin new-feature-x
-   ```
-7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
-8. **Review**: Once your PR is reviewed and approved, it will be merged into the main branch. Congratulations on your contribution!
-</details>
-
-<details closed>
-<summary>Contributor Graph</summary>
-<br>
-<p align="left">
-   <a href="https://LOCAL{///}graphs/contributors">
-      <img src="https://contrib.rocks/image?repo=/">
-   </a>
-</p>
-</details>
-
----
-
-## License
-
- is protected under the [LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
-
-## Acknowledgments
-
-- Credit `contributors`, `inspiration`, `references`, etc.
-
-<div align="right">
 
 [![][back-to-top]](#top)
 
@@ -219,4 +228,13 @@ echo 'INSERT-TEST-COMMAND-HERE'
 
 
 ---
+
+
+
+
+
+
+
+
+
 
