@@ -3,7 +3,7 @@
 <!-- HEADER STYLE: CLASSIC -->
 <div align="center">
 
-<img src="readmeai/assets/logos/purple.svg" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
+<img src="iaüsirketlogo.jpg" width="180px" alt="İAÜ Şirket Logo" style="margin-bottom: 10px;"/>
 
 # <code>Patent AI</code>
 
@@ -12,7 +12,7 @@
 <!-- BADGES -->
 <!-- local repository, no metadata badges. -->
 
-<em>Built with the tools and technologies:</em>
+<em>Kullanılması Amaçlanan Teknolojiler:</em>
 
 <img src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white" alt="Python">
 <img src="https://img.shields.io/badge/FastAPI-009688.svg?style=for-the-badge&logo=FastAPI&logoColor=white" alt="FastAPI">
@@ -32,30 +32,29 @@
 ---
 
 ## 📑 İçindekiler
-
-- [📑 İçindekiler](#-i̇çindekiler)
 - [👁️ Genel Bakış](#️-genel-bakış)
+- [👥 Ekip](#-ekip)
 - [🎯 Problem](#-problem)
 - [💡 Çözüm](#-çözüm)
 - [🚀 Temel Özellikler](#-temel-özellikler)
 - [🔧 Teknoloji Yığını](#-teknoloji-yığını)
 - [🏗️ Sistem Mimarisi](#️-sistem-mimarisi)
 - [📊 Veri Kaynakları](#-veri-kaynakları)
-- [🛣️ Vizyon & Gelecek Geliştirme](#️-vizyon--gelecek-geliştirme)
-- [📁 Proje Yapısı](#-proje-yapısı)
 - [🗓️ Yol Haritası](#️-yol-haritası)
-- [👥 Ekip](#-ekip)
-- [📞 İletişim](#-i̇letişim)
 ---
 
 ## 👁️ Genel Bakış
 
-**Team Members:**  
-- Berat Erol Çelik – Deep Learning, Group Representative  
-- Emre Aldemir – Backend, API  
-- Umut Odabaş – Frontend  
-- Ömer Altıntaş – ML  
-- Efkan Çıtak – LLM  
+## 👥 Ekip
+
+
+| Rol | Üye | LinkedIn |
+|------|--------|-----------|
+| **Deep Learning & Team Lead** | Berat Erol Çelik | [![LinkedIn](https://img.shields.io/badge/-Berat_Erol_Çelik-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/berat-erol-%C3%A7elik-513915258/) |
+| **Backend & API** | Emre Aldemir | [![LinkedIn](https://img.shields.io/badge/-Emre_Aldemir-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/emre-aldemir-1b2301293/) |
+| **Frontend & UI/UX** | Umut Odabaş | [![LinkedIn](https://img.shields.io/badge/-Umut_Odabaş-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/umut-odaba%C5%9F-8a26142a2/) |
+| **Machine Learning** | Ömer Altıntaş | [![LinkedIn](https://img.shields.io/badge/-Ömer_Altıntaş-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/%C3%B6mer-alt%C4%B1nta%C5%9F-44773730b/) |
+| **LLM Specialist** | Efkan Çıtak | [![LinkedIn](https://img.shields.io/badge/-Efkan_Çıtak-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/efkan-%C3%A7%C4%B1tak-b848a32a0/) |
 
 ---
 
@@ -173,17 +172,13 @@ PatentAI, hem Türkçe hem İngilizce patent verileriyle çalışır.
 
 - **Google Patent İngilizce ve Türkçe Patentler** - Ana veri kaynağı
 
+## 🗓️ Yol Haritası
+-  **`Task 1`**: Analiz & Planlama
+-  **`Task 2`**: Veri Toplama & Modelleme Başlangıcı
+-  **`Task 3`**: Flask API & Backend Geliştirme
+-  **`Task 4`**: Arayüz + Raporlama ( Python tabanlı)
+-  **`Task 5`**: Test,Demo & Sunum
 
-
-### Backend & API Layer
-
-PatentAI’nin arka uç servisi **Flask veya FastAPI** ile geliştirilmesi planlanmaktadır.
-
-| Bileşen | Açıklama | ( ÖRNEK OLARAK)
-|----------|-----------|
-| `/analyze` | Kullanıcıdan gelen fikir/patent metnini alır, embedding çıkarır ve benzer patentleri döndürür. |
-| `/report` | Analiz sonuçlarını özetleyip JSON veya PDF formatında rapor olarak döner. |
-| `/feedback` | Kullanıcı geri bildirimini toplar ve sistemin sürekli öğrenmesini sağlar. |
 
 **Teknolojiler:**  
 - Python 3.x  
@@ -206,19 +201,6 @@ PatentAI’nin arka uç servisi **Flask veya FastAPI** ile geliştirilmesi planl
 ---
 
 
-## Roadmap
-
--  **`Task 1`**: Analiz & Planlama
--  **`Task 2`**: Veri Toplama & Modelleme Başlangıcı
--  **`Task 3`**: Flask API & Backend Geliştirme
--  **`Task 4`**: Arayüz + Raporlama ( Python tabanlı)
--  **`Task 5`**: Test,Demo & Sunum
-
-
-
----
-
-
 [![][back-to-top]](#top)
 
 </div>
@@ -228,6 +210,7 @@ PatentAI’nin arka uç servisi **Flask veya FastAPI** ile geliştirilmesi planl
 
 
 ---
+
 
 
 
