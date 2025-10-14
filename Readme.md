@@ -171,6 +171,7 @@ PatentAI, hem Türkçe hem İngilizce patent verileriyle çalışır.
 İlk MVP sürümünde kullanılacak kaynaklar:
 
 - **Google Patent İngilizce ve Türkçe Patentler** - Ana veri kaynağı
+- **EPO (European Patent Office)** - Ana veri kaynağı
 
 ## 🗓️ Yol Haritası
 -  **`Task 1`**: Analiz & Planlama
@@ -210,6 +211,7 @@ PatentAI, hem Türkçe hem İngilizce patent verileriyle çalışır.
 
 
 ---
+
 
 
 
