@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 from app.core.config import settings
 from . import models
 from .database import engine, SessionLocal
+from .ai_models import llm_service
 
 # database tablolarını oluşturuyor
 models.Base.metadata.create_all(bind=engine)
@@ -68,28 +69,21 @@ def read_root():
 @app.post("/api/analyze", response_model=AnalysisResponse)
 async def analyze_patent_idea(request: AnalysisRequest, db: Session = Depends(get_db)):
     """
-    Patent fikrini analiz eder, sahte bir rapor döndürür
-    VE BU RAPORU VERİTABANINA KAYDEDER.
+    Patent fikrini alır, YENİ LLM SERVİSİMİZ ile analiz eder,
+    sonucu veritabanına kaydeder ve kullanıcıya döndürür.
     """
     print(f"Analiz için gelen metin: '{request.text_to_analyze}'")
 
-    # 1. SAHTE RAPORU OLUŞTURUYORUZ
-    mock_response = {
-        "analysis_id": "mock-report-xyz-123",
-        "status": "completed",
-        "novelty_score": 87.2,
-        "similar_patents": [
-            {"patent_id": "US-2022-FAKE-A1", "title": "Mock Solar Powered Drone", "similarity_score": 0.91},
-            {"patent_id": "TR-2021-FAKE-B", "title": "Sahte Batarya Yönetim Sistemi", "similarity_score": 0.85}
-        ],
-        "summary": "Bu, yapay zeka entegre edilmeden önce oluşturulmuş sahte bir analiz raporudur."
-    }
+    # 1. YENİ YAPAY ZEKA SERVİSİNİ ÇAĞIR
+    #    Artık mock_response yok!
+    analysis_result = await llm_service.get_llm_analysis(request.text_to_analyze)
 
-    # 2. DATABASE'E KAYDETTİK
+    # 2. VERİTABANINA KAYDET
+    #    Yapay zekadan gelen gerçek sonuçları kaydet
     db_report = models.AnalysisReport(
         text_to_analyze=request.text_to_analyze,
-        novelty_score=mock_response["novelty_score"],
-        summary=mock_response["summary"]
+        novelty_score=analysis_result["novelty_score"],
+        summary=analysis_result["summary"]
     )
 
     db.add(db_report)
@@ -98,5 +92,13 @@ async def analyze_patent_idea(request: AnalysisRequest, db: Session = Depends(ge
 
     print(f"Rapor başarıyla veritabanına kaydedildi, ID: {db_report.id}")
 
-    # 3. KULLANICIYA CEVABI GÖNDERDİK
-    return mock_response
+    # 3. KULLANICIYA CEVABI DÖNDÜR
+    #    Cevabı, veritabanından ve AI servisinden gelen
+    #    gerçek verilerle oluştur.
+    return AnalysisResponse(
+        analysis_id=str(db_report.id),  # DB'den gelen gerçek ID
+        status="completed",
+        novelty_score=analysis_result["novelty_score"],
+        summary=analysis_result["summary"],
+        similar_patents=[]  # Benzer patent işini daha yapmadık
+    )
