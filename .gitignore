@@ -1,0 +1,22 @@
+# Sanal Ortam (Virtual Environment)
+# Bu klasör binlerce dosya içerir ve GÖNDERİLMEMELİDİR.
+venv/
+*.venv/
+
+# Python cache dosyaları (Geçici)
+__pycache__/
+*.pyc
+
+# Veritabanı dosyası (Çok Öemli)
+# Herkesin kendi yerel veritabanı olmalı.
+patentai.db
+*.db
+*.sqlite
+*.sqlite3
+
+# İleride ekleyeceğimiz gizli ayarlar
+.env
+
+# Editör ayarları (Kişisel)
+.vscode/
+.idea/
