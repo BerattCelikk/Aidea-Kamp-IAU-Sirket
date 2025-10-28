@@ -13,6 +13,34 @@ sys.path.append(current_dir)
 print(f"📁 Çalışma dizini: {current_dir}")
 print(f"📁 Mevcut dosyalar: {os.listdir(current_dir)}")
 
+# FALLBACK MODELS - ÖNCE BUNU EKLEYELİM
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, Float, Text, DateTime
+from datetime import datetime
+
+Base = declarative_base()
+
+class AnalysisReport(Base):
+    __tablename__ = "analysis_reports"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    text_to_analyze = Column(Text, nullable=False)
+    novelty_score = Column(Float, default=0.0)
+    summary = Column(Text)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+# SQLite database oluştur
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+SQLALCHEMY_DATABASE_URL = "sqlite:///./patent_ai.db"
+engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+# Tabloları oluştur
+Base.metadata.create_all(bind=engine)
+print("✅ Database tabloları oluşturuldu")
+
 # RELATIVE IMPORT'ları kullan
 try:
     from core.config import settings
@@ -22,23 +50,7 @@ except ImportError as e:
     # Fallback settings
     class Settings:
         PROJECT_NAME = "Patent AI"
-        DATABASE_URL = "sqlite:///./patent_ai.db"
     settings = Settings()
-
-try:
-    from database import engine, SessionLocal
-    print("✅ Database import edildi")
-except ImportError as e:
-    print(f"❌ Database import hatası: {e}")
-    # SQLite fallback
-    from sqlalchemy import create_engine
-    from sqlalchemy.ext.declarative import declarative_base
-    from sqlalchemy.orm import sessionmaker
-    
-    SQLALCHEMY_DATABASE_URL = "sqlite:///./patent_ai.db"
-    engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
-    SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-    Base = declarative_base()
 
 try:
     from ai_models import llm_service
@@ -46,45 +58,6 @@ try:
 except ImportError as e:
     print(f"❌ AI Models import hatası: {e}")
     llm_service = None
-
-# Models'i doğrudan import etmeyi dene
-try:
-    # Mevcut models.py dosyasını import et
-    import importlib.util
-    spec = importlib.util.spec_from_file_location("models", os.path.join(current_dir, "models.py"))
-    models = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(models)
-    print("✅ Models doğrudan import edildi")
-except Exception as e:
-    print(f"❌ Models import hatası: {e}")
-    # Fallback models oluştur
-    from sqlalchemy.ext.declarative import declarative_base
-    from sqlalchemy import Column, Integer, String, Float, Text, DateTime
-    from datetime import datetime
-    
-    Base = declarative_base()
-    
-    class AnalysisReport(Base):
-        __tablename__ = "analysis_reports"
-        
-        id = Column(Integer, primary_key=True, index=True)
-        text_to_analyze = Column(Text, nullable=False)
-        novelty_score = Column(Float, default=0.0)
-        summary = Column(Text)
-        created_at = Column(DateTime, default=datetime.utcnow)
-    
-    models = type('Models', (), {
-        'Base': Base,
-        'AnalysisReport': AnalysisReport
-    })
-    print("✅ Fallback models oluşturuldu")
-
-# Database tablolarını oluştur
-try:
-    models.Base.metadata.create_all(bind=engine)
-    print("✅ Database tabloları oluşturuldu")
-except Exception as e:
-    print(f"❌ Database tablo oluşturma hatası: {e}")
 
 # Yeni servisleri import etmeyi dene
 try:
@@ -144,29 +117,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# CSV dosya yolu - ALTERNATİF YOLLAR
-BASE_DIR = os.path.dirname(os.path.dirname(current_dir))  # AA klasörü
-CSV_PATHS = [
-    os.path.join(BASE_DIR, 'data', 'processed', 'patentAI.csv'),
-    os.path.join(BASE_DIR, 'data', 'raw', 'patentAI.csv'),
-    os.path.join(BASE_DIR, 'patentAI.csv'),
-    os.path.join(current_dir, 'data', 'patentAI.csv'),
-]
+# CSV dosya yolu
+BASE_DIR = os.path.dirname(current_dir)  # backend klasörü
+AA_DIR = os.path.dirname(BASE_DIR)  # AA klasörü
+CSV_PATH = os.path.join(AA_DIR, 'data', 'processed', 'patentAI.csv')
 
-CSV_PATH = None
-for path in CSV_PATHS:
-    if os.path.exists(path):
-        CSV_PATH = path
-        print(f"✅ CSV dosyası bulundu: {path}")
-        break
+print(f"📁 CSV yolu: {CSV_PATH}")
 
-if CSV_PATH is None:
-    print("❌ Hiçbir CSV dosyası bulunamadı! Alternatif yollar:")
-    for path in CSV_PATHS:
-        print(f"   - {path}")
-
-# CSV detaylarını göster
-if CSV_PATH and os.path.exists(CSV_PATH):
+# CSV KONTROLÜ
+if os.path.exists(CSV_PATH):
+    print("✅ CSV dosyası mevcut")
     try:
         import pandas as pd
         df = pd.read_csv(CSV_PATH)
@@ -175,7 +135,9 @@ if CSV_PATH and os.path.exists(CSV_PATH):
         print(f"   - Sütun sayısı: {len(df.columns)}")
         print(f"   - Sütun isimleri: {list(df.columns)}")
     except Exception as e:
-        print(f"⚠️  CSV okuma hatası: {e}")
+        print(f"⚠️  CSV detay okuma hatası: {e}")
+else:
+    print("❌ CSV dosyası bulunamadı!")
 
 # --- API UÇ NOKTALARI ---
 
@@ -186,18 +148,16 @@ def read_root():
 @app.get("/health")
 def health_check():
     """Sistem sağlık kontrolü"""
-    services_status = {
-        "database": "active",
-        "llm_service": "active" if llm_service else "inactive", 
-        "patent_analysis_service": "active" if ANALYSIS_SERVICE_AVAILABLE else "inactive",
-        "csv_data": "available" if CSV_PATH and os.path.exists(CSV_PATH) else "missing"
-    }
     return {
         "status": "healthy", 
-        "services": services_status,
+        "services": {
+            "database": "active",
+            "llm_service": "active" if llm_service else "inactive", 
+            "patent_analysis_service": "active" if ANALYSIS_SERVICE_AVAILABLE else "inactive",
+            "csv_data": "available" if os.path.exists(CSV_PATH) else "missing"
+        },
         "project": settings.PROJECT_NAME,
-        "csv_file": os.path.basename(CSV_PATH) if CSV_PATH and os.path.exists(CSV_PATH) else "not_found",
-        "csv_path": CSV_PATH
+        "csv_file": os.path.basename(CSV_PATH) if os.path.exists(CSV_PATH) else "not_found"
     }
 
 # MEVCUT ENDPOINT
@@ -208,8 +168,18 @@ async def analyze_patent_idea(request: AnalysisRequest, db: Session = Depends(ge
     """
     if not llm_service:
         # Fallback analiz
+        db_report = AnalysisReport(
+            text_to_analyze=request.text_to_analyze,
+            novelty_score=0.7,
+            summary="LLM servisi şu anda kullanılamıyor. Temel analiz sağlandı."
+        )
+        
+        db.add(db_report)
+        db.commit()
+        db.refresh(db_report)
+        
         return AnalysisResponse(
-            analysis_id="fallback_123",
+            analysis_id=str(db_report.id),
             status="completed",
             novelty_score=0.7,
             summary="LLM servisi şu anda kullanılamıyor. Temel analiz sağlandı.",
@@ -223,7 +193,7 @@ async def analyze_patent_idea(request: AnalysisRequest, db: Session = Depends(ge
         analysis_result = await llm_service.get_llm_analysis(request.text_to_analyze)
 
         # Veritabanına kaydet
-        db_report = models.AnalysisReport(
+        db_report = AnalysisReport(
             text_to_analyze=request.text_to_analyze,
             novelty_score=analysis_result.get("novelty_score", 0.5),
             summary=analysis_result.get("summary", "Analiz tamamlandı")
@@ -232,11 +202,9 @@ async def analyze_patent_idea(request: AnalysisRequest, db: Session = Depends(ge
         db.add(db_report)
         db.commit()
         db.refresh(db_report)
-        analysis_id = str(db_report.id)
-        print(f"Rapor veritabanına kaydedildi, ID: {db_report.id}")
 
         return AnalysisResponse(
-            analysis_id=analysis_id,
+            analysis_id=str(db_report.id),
             status="completed",
             novelty_score=analysis_result.get("novelty_score", 0.5),
             summary=analysis_result.get("summary", "Analiz tamamlandı"),
@@ -246,8 +214,18 @@ async def analyze_patent_idea(request: AnalysisRequest, db: Session = Depends(ge
     except Exception as e:
         print(f"❌ Analiz hatası: {e}")
         # Fallback response
+        db_report = AnalysisReport(
+            text_to_analyze=request.text_to_analyze,
+            novelty_score=0.5,
+            summary=f"Analiz sırasında hata oluştu: {str(e)}"
+        )
+        
+        db.add(db_report)
+        db.commit()
+        db.refresh(db_report)
+        
         return AnalysisResponse(
-            analysis_id="error_123",
+            analysis_id=str(db_report.id),
             status="completed",
             novelty_score=0.5,
             summary=f"Analiz sırasında hata oluştu: {str(e)}",
@@ -271,7 +249,7 @@ async def analyze_patent_comprehensive(request: PatentAnalysisRequest):
             user_input=request.patent_text
         )
     
-    if not CSV_PATH or not os.path.exists(CSV_PATH):
+    if not os.path.exists(CSV_PATH):
         return ComprehensiveAnalysisResponse(
             analysis_id="no_csv",
             status="completed", 
@@ -317,40 +295,6 @@ async def analyze_patent_comprehensive(request: PatentAnalysisRequest):
             user_input=request.patent_text
         )
 
-# Test endpoint'i
-@app.post("/api/test")
-async def test_endpoint(patent_text: str = "Test patent açıklaması"):
-    """
-    Hızlı test için basit endpoint
-    """
-    return {
-        "message": "API çalışıyor!",
-        "received_text": patent_text,
-        "services": {
-            "database": "active",
-            "llm_service": "active" if llm_service else "inactive",
-            "patent_analysis": "active" if ANALYSIS_SERVICE_AVAILABLE else "inactive",
-            "csv_file": "available" if CSV_PATH and os.path.exists(CSV_PATH) else "missing"
-        },
-        "csv_path": CSV_PATH,
-        "available_endpoints": [
-            "GET /health - Sistem durumu",
-            "POST /api/analyze - Basit analiz", 
-            "POST /api/analyze-comprehensive - Kapsamlı analiz (Ollama + CSV)",
-            "POST /api/test - Test endpoint"
-        ]
-    }
-
-# Basit bir GET test endpoint'i
-@app.get("/api/test")
-async def simple_test():
-    return {
-        "message": "GET test başarılı!", 
-        "status": "active",
-        "timestamp": __import__('datetime').datetime.now().isoformat(),
-        "csv_available": CSV_PATH and os.path.exists(CSV_PATH)
-    }
-
 # Demo endpoint - CSV olmadan çalışabilir
 @app.post("/api/demo-analysis")
 async def demo_analysis(request: PatentAnalysisRequest):
@@ -377,6 +321,41 @@ async def demo_analysis(request: PatentAnalysisRequest):
         detailed_report=f"DEMO ANALİZ: '{request.patent_text}' fikriniz analiz edildi. 3 benzer patent bulundu. Yenilik potansiyeli: %75. Gerçek analiz için CSV veritabanı yüklenmelidir.",
         user_input=request.patent_text
     )
+
+# Test endpoint'i - Hızlı servis kontrolü için
+@app.post("/api/test")
+async def test_endpoint(patent_text: str = "Test patent açıklaması"):
+    """
+    Hızlı test için basit endpoint
+    """
+    return {
+        "message": "API çalışıyor!",
+        "received_text": patent_text,
+        "services": {
+            "database": "active",
+            "llm_service": "active" if llm_service else "inactive",
+            "patent_analysis": "active" if ANALYSIS_SERVICE_AVAILABLE else "inactive",
+            "csv_file": "available" if os.path.exists(CSV_PATH) else "missing"
+        },
+        "csv_path": CSV_PATH,
+        "available_endpoints": [
+            "GET /health - Sistem durumu",
+            "POST /api/analyze - Basit analiz",
+            "POST /api/analyze-comprehensive - Kapsamlı analiz (Ollama + CSV)",
+            "POST /api/demo-analysis - Demo analiz (CSV olmadan çalışır)",
+            "POST /api/test - Test endpoint"
+        ]
+    }
+
+# Basit bir GET test endpoint'i
+@app.get("/api/test")
+async def simple_test():
+    return {
+        "message": "GET test başarılı!", 
+        "status": "active",
+        "timestamp": __import__('datetime').datetime.now().isoformat(),
+        "csv_available": os.path.exists(CSV_PATH)
+    }
 
 if __name__ == "__main__":
     import uvicorn

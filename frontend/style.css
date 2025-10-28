@@ -186,3 +186,423 @@ footer {
   text-align: center;
   opacity: 0.8;
 }
+
+/* === EK STİLLER === */
+.features ul {
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+}
+
+.features li {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.team-member {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  text-align: center;
+}
+
+.team-member strong {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.team-member span {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.system-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.info-item {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  text-align: center;
+}
+
+.info-item h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.info-item p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.chat-description {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.example-prompts {
+  margin-top: 1.5rem;
+}
+
+.example-prompts h4 {
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+
+.prompts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+}
+
+.prompt-btn {
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.prompt-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tech-category {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+}
+
+.tech-category h3 {
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.3rem;
+}
+
+.tech-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tech-category li {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.tech-category li:before {
+  content: "▸";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+}
+
+.mission-content p {
+  margin: 0.8rem 0;
+  line-height: 1.6;
+}
+
+.mission-content strong {
+  color: var(--accent);
+}
+
+footer small {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+/* === PATENT ANALİZ STİLLERİ === */
+.patent-analysis {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-left: 4px solid var(--accent);
+  max-width: 100%;
+}
+
+.analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.analysis-header h3 {
+  color: var(--accent);
+  margin: 0;
+}
+
+.novelty-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.novelty-badge.high { 
+  background: #d1fae5; 
+  color: #065f46; 
+}
+.novelty-badge.medium { 
+  background: #fef3c7; 
+  color: #92400e; 
+}
+.novelty-badge.low { 
+  background: #fee2e2; 
+  color: #991b1b; 
+}
+.novelty-badge.unknown { 
+  background: #e5e7eb; 
+  color: #374151; 
+}
+
+body.dark .novelty-badge.high { 
+  background: #064e3b; 
+  color: #a7f3d0; 
+}
+body.dark .novelty-badge.medium { 
+  background: #78350f; 
+  color: #fcd34d; 
+}
+body.dark .novelty-badge.low { 
+  background: #7f1d1d; 
+  color: #fca5a5; 
+}
+body.dark .novelty-badge.unknown { 
+  background: #374151; 
+  color: #d1d5db; 
+}
+
+.similar-patents {
+  margin: 1rem 0;
+}
+
+.similar-patents h4 {
+  color: var(--text);
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.patent-item {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--card-border);
+  transition: transform 0.2s;
+}
+
+.patent-item:hover {
+  transform: translateY(-2px);
+}
+
+.patent-rank {
+  font-weight: bold;
+  color: var(--accent);
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.patent-title {
+  font-weight: 500;
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.patent-details {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  color: var(--text);
+  opacity: 0.8;
+  margin-top: 0.3rem;
+}
+
+.patent-category, .patent-assignee {
+  background: var(--card-bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+}
+
+.ai-analysis {
+  margin: 1rem 0;
+}
+
+.ai-analysis h4 {
+  color: var(--text);
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.analysis-points {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0.8rem 0;
+}
+
+.point {
+  background: var(--bg);
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+}
+
+.point strong {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.point ul {
+  margin: 0.3rem 0 0 0;
+  padding-left: 1.2rem;
+}
+
+.point li {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.detailed-report {
+  margin-top: 1rem;
+}
+
+.detailed-report h4 {
+  color: var(--text);
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.report-content {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--card-border);
+}
+
+/* Buton stilleri */
+.health-check-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin: 0.3rem 0;
+}
+
+.health-check-btn:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-grid,
+  .system-info,
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .prompts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .analysis-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .patent-details {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .bubble {
+    max-width: 85%;
+  }
+  
+  .report-content {
+    max-height: 150px;
+  }
+}
+
+/* Scrollbar stilleri */
+.report-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.report-content::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-radius: 3px;
+}
+
+.report-content::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+.report-content::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-radius: 3px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
