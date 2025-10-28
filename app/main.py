@@ -76,7 +76,7 @@ async def analyze_patent_idea(request: AnalysisRequest, db: Session = Depends(ge
 
     # 1. YENİ YAPAY ZEKA SERVİSİNİ ÇAĞIR
     #    Artık mock_response yok!
-    analysis_result = await llm_service.get_llm_analysis(request.text_to_analyze)
+    analysis_result = llm_service.get_analysis(request.text_to_analyze)
 
     # 2. VERİTABANINA KAYDET
     #    Yapay zekadan gelen gerçek sonuçları kaydet

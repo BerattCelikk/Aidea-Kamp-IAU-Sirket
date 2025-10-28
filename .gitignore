@@ -20,3 +20,6 @@ patentai.db
 # Editör ayarları (Kişisel)
 .vscode/
 .idea/
+
+# FAISS vektör veritabanı (Beyin dosyası)
+*.faiss
