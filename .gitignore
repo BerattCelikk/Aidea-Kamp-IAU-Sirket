@@ -7,12 +7,15 @@ venv/
 __pycache__/
 *.pyc
 
-# Veritabanı dosyası (Çok Öemli)
+# Veritabanı dosyası (Çok Önemli)
 # Herkesin kendi yerel veritabanı olmalı.
 patentai.db
 *.db
 *.sqlite
 *.sqlite3
+
+# FAISS vektör veritabanı (Beyin dosyası - Çok Büyük Olabilir)
+*.faiss
 
 # İleride ekleyeceğimiz gizli ayarlar
 .env

@@ -166,9 +166,10 @@ async function checkSystemHealth() {
     
     let healthStatus = `✅ <strong>Sistem Durumu</strong><br>`;
     healthStatus += `📊 Database: ${data.services.database}<br>`;
-    healthStatus += `🤖 LLM: ${data.services.llm_service}<br>`;
-    healthStatus += `🔍 Patent Analiz: ${data.services.patent_analysis_service}<br>`;
-    healthStatus += `📁 CSV Data: ${data.services.csv_data}`;
+    // Artık sadece backend'in gönderdiği 'llm_service' durumunu gösteriyoruz
+    // ve bunun gerçek analiz servisi olduğunu biliyoruz.
+    healthStatus += `🤖 Ana Analiz Servisi (LLM): ${data.services.llm_service}<br>`; 
+    healthStatus += `📁 CSV Veri Seti: ${data.services.csv_data}`;
     
     addMessage('bot', healthStatus);
   } catch (error) {

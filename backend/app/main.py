@@ -136,8 +136,8 @@ def health_check():
         "status": "healthy", 
         "services": {
             "database": "active" if SessionLocal else "inactive",
-            "llm_service": "inactive (deprecated)", # Eski servisin artık olmadığını belirt
-            "patent_analysis_service": "active" if ANALYSIS_SERVICE_AVAILABLE else "inactive",
+            # "ANALYSIS_SERVICE_AVAILABLE" değişkeninin durumunu yansıtıyor.
+            "llm_service": "active" if ANALYSIS_SERVICE_AVAILABLE else "inactive",
             "csv_data": "available" if os.path.exists(CSV_PATH) else "missing"
         },
         "project": settings.PROJECT_NAME,
