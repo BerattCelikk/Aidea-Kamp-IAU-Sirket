@@ -8,7 +8,9 @@ logger = logging.getLogger(__name__)
 class OllamaService:
     def __init__(self, model_name="llama3"):
         self.model_name = model_name
-        self.client = ollama.Client()
+        self.client = ollama.Client(host='http://localhost:11434') 
+        print("🔧 Ollama Client başlatıldı. GPU kullanımı kontrol ediliyor...")
+        print("💡 CPU kullanımı için ayar denendi (Not: Asıl ayar model çağrısındadır).")
         
     def analyze_patent_differences(self, user_patent: str, similar_patents: List[str]) -> Dict[str, Any]:
 
@@ -44,7 +46,9 @@ class OllamaService:
                 prompt=prompt,  # Hazırladığımız prompt
                 options={
                     'temperature': 0.3,  # Düşük temperature = daha tutarlı cevaplar
-                    'top_p': 0.9  # Kelime seçiminde çeşitlilik kontrolü
+                    'top_p': 0.9,  # Kelime seçiminde çeşitlilik kontrolü
+                    # YENİ EKLENEN SATIR: GPU kullanımını kapatmayı dene
+                    'num_gpu': 0
                 }
             )
             
@@ -80,7 +84,9 @@ class OllamaService:
             # AI'dan rapor oluşturmasını iste
             response = self.client.generate(
                 model=self.model_name,  # Aynı modeli kullan
-                prompt=prompt  # Rapor prompt'u
+                prompt=prompt,  # Rapor prompt'u
+                # YENİ EKLENEN OPTIONS BLOĞU: GPU kullanımını kapatmayı dene
+                options={'num_gpu': 0} 
             )
             return response['response']  # Oluşturulan raporu döndür
         except Exception as e:  # Hata durumu
